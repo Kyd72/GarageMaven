@@ -11,9 +11,9 @@ public class Stationnement {
 	private final Date entree = new Date(); // Aujourd'hui
 	private Date fin;
 
-	public Stationnement(Voiture v, Garage g) {
-		myCar = v;
-		myGarage = g;
+	public Stationnement(Voiture voiture, Garage garage) {
+		myCar = voiture;
+		myGarage = garage;
 	}
 
 	public Voiture getCar() {

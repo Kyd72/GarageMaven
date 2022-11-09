@@ -25,9 +25,9 @@ public class GarageTest {
 	public void lesVoituresSontBienInitialisees() {
 		// Given: une voiture après initialisation
 		// Then: la voiture n'est pas dans un garage
-		assertFalse(v1.estDansUnGarage());
+		assertFalse(v1.estDansUnGarage(),"Mauvaise initialisation des voitures");
 		// Then: la voiture n'a visité aucun garage
-		assertTrue(v1.garagesVisites().isEmpty());
+		assertTrue(v1.garagesVisites().isEmpty(),"Mauvaise initialisation des voitures");
 	}
 
 	@Test
@@ -36,9 +36,9 @@ public class GarageTest {
 		// When: On fait entrer la voiture au garage g1
 		v1.entreAuGarage(g1);
 		// Then: la voiture doit être dans un garage
-		assertTrue(v1.estDansUnGarage());
+		assertTrue(v1.estDansUnGarage(), "Mauvaise rentrée au garage");
 		// Then: g1 fait partie des garages visités par la voiture
-		assertTrue(v1.garagesVisites().contains(g1));
+		assertTrue(v1.garagesVisites().contains(g1),"Mauvaise mise à jour des garages visités par la voiture");
 	}
 
 	@Test
@@ -48,9 +48,9 @@ public class GarageTest {
 		v1.entreAuGarage(g1);
 		v1.sortDuGarage();
 		// Then: la voiture n'est plus dans un garage
-		assertFalse(v1.estDansUnGarage());
+		assertFalse(v1.estDansUnGarage(),"Mauvaise sortie du garage ");
 		// Then: g1 fait partie des garages visités par la voiture
-		assertTrue(v1.garagesVisites().contains(g1));
+		assertTrue(v1.garagesVisites().contains(g1), "mauvaise mise à jour des garages visités par la voiture");
 	}
 
 	@Test
